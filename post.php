@@ -9,7 +9,16 @@
 <body>
     <h1 align="center">Webboard TheToy</h1>
     <hr>
-     <center><?php echo "ต้องการดูกระทู้หมายเลข " .$_GET["id"];?> </center> <br>
+     <center><?php echo "ต้องการดูกระทู้หมายเลข " .$_GET["id"];?>  <br>
+     
+     <?php
+        if($_GET['id']%2==0){
+            echo "เป็นกระทู้หมายเลขคู่";
+        }else{
+            echo "เป็นกระทู้หมายเลขคี่";
+        }
+     ?>
+    </center>
     <div align="center">
         <table style="border: 2px solid black; width:40%" align="center">
         <tr><td colspan="2" style="background-color: #6CD2FE;">แสดงความคิดเห็น</td></tr>
@@ -18,6 +27,6 @@
     </table>
     </div>
     <br>
-    <center><a href="index.html">กลับไปหน้าหลัก</a></center>
+    <center><a href="index.php">กลับไปหน้าหลัก</a></center>
 </body>
 </html>
