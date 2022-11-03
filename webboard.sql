@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2022 at 10:12 AM
+-- Generation Time: Nov 03, 2022 at 09:53 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -71,6 +71,15 @@ CREATE TABLE `post` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`id`, `title`, `content`, `post_date`, `cat_id`, `user_id`) VALUES
+(1, 'adasdsad', 'asdsada', '2022-11-03 15:16:26', 1, 6),
+(2, 'Fมั้ย', 'แน่ๆ', '2022-11-03 15:45:20', 4, 7),
+(3, '55555', '55555', '2022-11-03 15:46:16', 3, 8);
+
 -- --------------------------------------------------------
 
 --
@@ -92,7 +101,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `login`, `password`, `name`, `gender`, `email`, `role`) VALUES
-(6, 'admin', '8dc9fa69ec51046b4472bb512e292d959edd2aef', 'admin', 'm', 'ad@gmail.com', 'm');
+(6, 'admin', '8dc9fa69ec51046b4472bb512e292d959edd2aef', 'admin', 'm', 'ad@gmail.com', 'm'),
+(7, 'member', 'b54df48c4c77522382a5a3c2f0358573ad43746e', 'memm', 'm', 'mm@m', 'm'),
+(8, 'zzz', '40fa37ec00c761c7dbb6ebdee6d4a260b922f5f4', 'zzz', 'm', 'zz@z', 'm');
 
 --
 -- Indexes for dumped tables
@@ -142,13 +153,13 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
