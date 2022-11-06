@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2022 at 09:53 AM
+-- Generation Time: Nov 06, 2022 at 03:48 PM
 -- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -56,6 +56,13 @@ CREATE TABLE `comment` (
   `post_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`id`, `content`, `post_date`, `user_id`, `post_id`) VALUES
+(1, '', '2022-11-06 21:46:31', 7, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -78,7 +85,9 @@ CREATE TABLE `post` (
 INSERT INTO `post` (`id`, `title`, `content`, `post_date`, `cat_id`, `user_id`) VALUES
 (1, 'adasdsad', 'asdsada', '2022-11-03 15:16:26', 1, 6),
 (2, 'Fมั้ย', 'แน่ๆ', '2022-11-03 15:45:20', 4, 7),
-(3, '55555', '55555', '2022-11-03 15:46:16', 3, 8);
+(3, '55555', '55555', '2022-11-03 15:46:16', 3, 8),
+(4, 'หิวข้าว', 'หิววววววววววววววววววววว', '2022-11-06 20:41:50', 4, 6),
+(5, 'FFFFF', 'FFFFFFFFFFFFFFFFFFFF', '2022-11-06 20:53:50', 2, 7);
 
 -- --------------------------------------------------------
 
@@ -147,13 +156,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`

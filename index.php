@@ -57,8 +57,6 @@
                 $row[3] - $row[4]</td></tr>";
             }
             $conn=null;
-
-            
         ?>
 </table> 
     </div>
@@ -88,15 +86,17 @@
 <br>
 <table class="table table-striped">
         <?php
-            for($i=1;$i<=10;$i++){
-                echo "<tr><td><a href=post.php?id=$i style=text-decoration:none>กระทู้ที่ $i</a></td>";
-                if($_SESSION["role"]=="a"){
-                    echo "<td><a href=delete.php?id=$i class='btn btn-danger btn-sm'
-                    onclick='return myFunction();'>
-                    <i class='bi bi-trash'></i></a></td>";
-                }
-                echo "</tr>";
+            $conn=new PDO("mysql:host=localhost;dbname=webboard;charset=utf8","root","");
+            $sql="SELECT t3.name,t1.id,t1.title,t2.login,t1.post_date FROM post as t1 
+            INNER JOIN user as t2 ON (t1.user_id=t2.id) INNER JOIN category as t3 ON 
+            (t1.cat_id=t3.id) ORDER BY t1.post_date DESC";
+            $result=$conn->query($sql);
+            while($row=$result->fetch()){
+                echo "<tr><td>[ $row[0] ] <a style=text-decoration:none 
+                href=post.php?id=$row[1]>$row[2]</a><br>
+                $row[3] - $row[4]</td></tr>";
             }
+            $conn=null;
         ?>
 </table>
 

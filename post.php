@@ -19,13 +19,28 @@
         }
      ?>
     </center>
-    <div align="center">
-        <table style="border: 2px solid black; width:40%" align="center">
-        <tr><td colspan="2" style="background-color: #6CD2FE;">แสดงความคิดเห็น</td></tr>
-        <tr><td><textarea name="post" id="post"></textarea></td></tr>
-        <tr><td colspan="2" align="center"><input type="submit" value="ส่งข้อความ"></td></tr>
-    </table>
+    <div class="card text-dark bg-white border-success">
+        <div class="card-header bg-success text-white">แสดงความคิดเห็น</div>
+        <div class="card-body">
+            <form action="post_save.php" method="post">
+            <input type="hidden" name="post_id" value="<?= $_GET['id']; ?>">
+                <div class="row mb-3 justify-content-center">
+                    <div class="col-lg-10">
+                        <textarea name="comment" class="form-control" rows="0"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <center>
+                            <button type="submit" class="btn btn-success btn-sm text-white">
+                            <i class="bi bi-box-arrow-up-right me-1"></i> ส่งข้อความ</button>
+                        </center>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
+    <br>
     <br>
     <center><a href="index.php">กลับไปหน้าหลัก</a></center>
 </body>
